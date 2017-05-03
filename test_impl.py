@@ -119,7 +119,6 @@ class TestQueue:
 			assert False
 
 	# test to check dequeue doesn't return False
-
 	@given(st.floats(min_value=None, max_value=None, allow_nan=None, allow_infinity=None))
 	@example(param=None)
 	@example(param=float('inf'))

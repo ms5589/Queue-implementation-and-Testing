@@ -9,7 +9,7 @@ class TestQueue:
 
 	vals = (st.lists(elements=(st.floats(allow_nan=False, allow_infinity=False)| st.text() |st.integers() | st.booleans() | st.tuples(st.integers(), st.booleans()) | st.dictionaries(st.integers(), st.text(), min_size=1 ))))
 	special_vals = (st.lists(elements=(st.floats(allow_nan=False, allow_infinity=False)) | st.text() | st.integers() | st.booleans() | st.tuples(st.integers(), st.booleans())| st.dictionaries(st.integers(), st.text(), min_size=1 ), min_size=1))
-	rahul_gandhi = (st.lists(elements=(st.floats(allow_nan=False, allow_infinity=False)) | st.text() | st.integers() | st.booleans() | st.tuples(st.integers(), st.booleans())| st.dictionaries(st.integers(), st.text(), min_size=1 ), min_size=1, max_size=1))
+	more_vals = (st.lists(elements=(st.floats(allow_nan=False, allow_infinity=False)) | st.text() | st.integers() | st.booleans() | st.tuples(st.integers(), st.booleans())| st.dictionaries(st.integers(), st.text(), min_size=1 ), min_size=1, max_size=1))
 	
 	def setup_method(self):
 		pass
@@ -137,7 +137,7 @@ class TestQueue:
 			assert False, "Sorry bro"
 
 	# to test enqueue inserts correct element
-	@given(rahul_gandhi)
+	@given(more_vals)
 	def test_correct_enqueue(self,param):
 		queue = impl.Queue()
 		try:

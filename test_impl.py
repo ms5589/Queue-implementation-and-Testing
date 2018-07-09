@@ -134,7 +134,7 @@ class TestQueue:
 			except:
 				assert False
 		except:
-			assert False, "Sorry bro"
+			assert False, "Sorry!"
 
 	# to test enqueue inserts correct element
 	@given(more_vals)
@@ -148,7 +148,7 @@ class TestQueue:
 				assert result == element
 			for element in param:
 				queue.enqueue(element)
-			queue.enqueue('cash_me_outside_howbow_dah')
+			queue.enqueue('random_string')
 			assert queue.len() == 2
 			for element in param:
 				m = queue.dequeue()
